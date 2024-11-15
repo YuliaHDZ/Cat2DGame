@@ -10,6 +10,7 @@ import javafx.util.Duration;
 
 public class HelloController {
 
+
     @FXML
     private ResourceBundle resources;
 
@@ -18,7 +19,8 @@ public class HelloController {
 
     @FXML
     private ImageView bg1, bg2, player;
-    private final int BGWidths = 590;  //if change fon change this const
+
+    private final int BGWidths = 689;  //if change fon change this const
     private ParallelTransition parallelTransition;
     public static boolean jump = false;
     public static boolean right = false;
