@@ -18,18 +18,22 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
 
         scene.setOnKeyPressed(e -> {
-            if(e.getCode() == KeyCode.A) {
-                HelloController.right = true;
-            }if (e.getCode() == KeyCode.D) {
+            if(e.getCode() == KeyCode.SPACE && !HelloController.jump) {
+                HelloController.jump = true;
+            }
+
+             if(e.getCode() == KeyCode.A) {
                 HelloController.left = true;
+            }if (e.getCode() == KeyCode.D) {
+                HelloController.right = true;
             }
         });
 
         scene.setOnKeyReleased(e -> {
             if(e.getCode() == KeyCode.A) {
-                HelloController.right = false;
-            }if (e.getCode() == KeyCode.D) {
                 HelloController.left = false;
+            }if (e.getCode() == KeyCode.D) {
+                HelloController.right = false;
             }
         });
 

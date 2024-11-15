@@ -20,17 +20,28 @@ public class HelloController {
     private ImageView bg1, bg2, player;
     private final int BGWidths = 590;  //if change fon change this const
     private ParallelTransition parallelTransition;
+    public static boolean jump = false;
     public static boolean right = false;
     public static boolean left = false;
-    private int playerSpeed = 3;
+    private int playerSpeed = 3, jumpDownSpeed = 5;
+    private double initialPlayerY;
 
     AnimationTimer timer = new AnimationTimer() {
         @Override
         public void handle(long l) {
-            if(right){
-                player.setLayoutX(player.getLayoutX() - playerSpeed);
-            }if(left){
+
+            if(jump && player.getLayoutY() > 90f){
+                player.setLayoutY(player.getLayoutY() - playerSpeed);
+            }else if(player.getLayoutY() <= 250f){
+                jump = false;
+                player.setLayoutY(player.getLayoutY() + jumpDownSpeed);
+            }
+
+
+            if(right && player.getLayoutX() < 100f){
                 player.setLayoutX(player.getLayoutX() + playerSpeed);
+            }if(left && player.getLayoutX() > 28f){
+                player.setLayoutX(player.getLayoutX() - playerSpeed);
             }
         }
     };
@@ -38,6 +49,8 @@ public class HelloController {
 
     @FXML
     void initialize() {
+        initialPlayerY = player.getLayoutY();
+
         TranslateTransition bgOneTransition = new TranslateTransition(Duration.millis(5000),bg1);
         bgOneTransition.setFromX(0);
         bgOneTransition.setToX(BGWidths * -1);
