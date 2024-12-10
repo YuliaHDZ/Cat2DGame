@@ -30,11 +30,12 @@ public class HelloApplication extends Application {
         });
 
         scene.setOnKeyReleased(e -> {
-            if(e.getCode() == KeyCode.A) {
+            if(e.getCode() == KeyCode.A)
                 HelloController.left = false;
-            }if (e.getCode() == KeyCode.D) {
+            if (e.getCode() == KeyCode.D)
                 HelloController.right = false;
-            }
+            if (e.getCode() == KeyCode.ESCAPE)
+                HelloController.isPause = !HelloController.isPause;
         });
 
         stage.show();
