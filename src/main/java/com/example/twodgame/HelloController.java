@@ -24,7 +24,7 @@ public class HelloController {
     private ImageView bg1, bg2, player, enemy, enemy2;
 
     @FXML
-    private Label lablePause;
+    private Label lablePause, lablelouse;
 
     private final int BGWidths = 689;  //if change fon change this const
     private ParallelTransition parallelTransition;
@@ -67,6 +67,24 @@ public class HelloController {
                 enemyTransition.play();
                 enemyTwoTransition.play();
                 lablePause.setVisible(false);
+            }
+
+            if(player.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                lablelouse.setVisible(true);
+                playerSpeed = 0;
+                jumpDownSpeed = 0;
+                parallelTransition.pause();
+                enemyTransition.pause();
+                enemyTwoTransition.pause();
+
+            }
+            if(player.getBoundsInParent().intersects(enemy2.getBoundsInParent())) {
+                lablelouse.setVisible(true);
+                playerSpeed = 0;
+                jumpDownSpeed = 0;
+                parallelTransition.pause();
+                enemyTransition.pause();
+                enemyTwoTransition.pause();
             }
         }
     };

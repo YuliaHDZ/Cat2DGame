@@ -23,7 +23,7 @@
             <Image url="@../../../images/origwall.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy" fitHeight="101.0" fitWidth="110.0" layoutX="698.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemy" fitHeight="75.0" fitWidth="56.0" layoutX="698.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/e1.png" />
          </image>
@@ -36,6 +36,11 @@
       <Label fx:id="lablePause" focusTraversable="false" layoutX="239.0" layoutY="149.0" prefHeight="89.0" prefWidth="210.0" text="Pause" textFill="#1e1b1b" visible="false">
          <font>
             <Font name="Algerian" size="64.0" />
+         </font>
+      </Label>
+      <Label fx:id="lablelouse" layoutX="271.0" layoutY="31.0" prefHeight="302.0" prefWidth="728.0" text="lose" visible="false">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="80.0" />
          </font>
       </Label>
    </children>
